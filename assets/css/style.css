@@ -280,6 +280,7 @@ h2 {
   font-weight: 800;
   letter-spacing: -0.3px;
   margin-bottom: 0.3rem;
+  line-height: 1.2;
 }
 
 .about-role {
@@ -302,6 +303,7 @@ h2 {
   text-transform: uppercase;
   color: var(--text);
   margin-bottom: 1.25rem;
+  line-height: 1.4;
 }
 
 
@@ -312,7 +314,7 @@ h2 {
 
 .item { border-top: 1px solid var(--border); padding-top: 1.5rem; }
 
-.item-meta { font-size: 12px; color: var(--teal); font-weight: 500; margin-bottom: 0.25rem; }
+.item-meta { font-size: 12px; color: var(--teal); font-weight: 500; margin-bottom: 0.25rem; line-height: 1.4; }
 
 .item h3 {
   font-family: 'Syne', sans-serif;
@@ -320,9 +322,10 @@ h2 {
   font-weight: 700;
   color: var(--text);
   margin-bottom: 0.3rem;
+  line-height: 1.4;
 }
 
-.item p { font-size: 13px; color: #777; line-height: 1.65; }
+.item p { font-size: 13px; color: #777; line-height: 1.8; }
 
 
 /* ----------------------------------------------------------------
@@ -335,6 +338,7 @@ h2 {
   font-size: 14px;
   color: var(--text);
   text-decoration: none;
+  line-height: 1.5;
 }
 .contact-email:hover { color: var(--teal); }
 
