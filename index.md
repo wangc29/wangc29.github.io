@@ -23,7 +23,7 @@ title: ""
 
   <div>
     <div class="about-name">Chen Wang</div>
-    <div class="about-role">---, --- · --- </div>
+    <div class="about-role">Statistical scientist | Human Genetics | Clinical and Drug development </div>
     <div class="links" style="margin-top: 0.75rem;">
       <!-- Links pull from _config.yml automatically -->
       <a class="btn-ghost" href="{{ site.scholar_url }}" target="_blank">Google Scholar</a>
