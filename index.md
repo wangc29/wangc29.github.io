@@ -23,7 +23,7 @@ title: ""
 
   <div>
     <div class="about-name">Chen Wang</div>
-    <div class="about-role">Associate Manager, Statistical Genetics · Regeneron Genetics Center</div>
+    <div class="about-role">---, --- · --- </div>
     <div class="links" style="margin-top: 0.75rem;">
       <!-- Links pull from _config.yml automatically -->
       <a class="btn-ghost" href="{{ site.scholar_url }}" target="_blank">Google Scholar</a>
@@ -45,13 +45,7 @@ title: ""
 -->
 <div class="about-bio">
   <p>
-    Hi! I'm Chen. I am an Associate Manager of Statistical Genetics at the
-    <a href="https://www.regeneron.com/science/genetics-center">Regeneron Genetics Center</a>,
-    where I develop internal tools for targeted trial emulation using causal inference
-    and time-to-event analysis to validate human genetics hypotheses and inform target
-    prioritization. Previously, I was a Senior Manager of Clinical Data Science at
-    <a href="https://www.gilead.com">Gilead Sciences</a>, where I led statistical
-    modeling efforts across 40+ clinical programs.
+    Hi! I'm Chen.
   </p>
   <p>
     I received my Ph.D. in Statistical Genetics from
@@ -59,14 +53,10 @@ title: ""
     advised by
     <!-- Replace YOUR_ADVISOR_URL with Dr. Liu's actual profile page -->
     <a href="YOUR_ADVISOR_URL">Dr. Dajiang J. Liu</a>.
-    Before that, I completed my M.S. in Bioinformatics and Applied Statistics at
-    Miami University and my B.S. in Biological Sciences at China Agricultural University.
   </p>
   <p>
     My research sits at the interface of human genetics, real-world evidence, and clinical
-    trial analytics. I apply rigorous statistical methods — including Bayesian inference,
-    causal inference, and machine learning — to support target discovery, indication
-    selection, and end-to-end clinical development decision-making.
+    trial analytics.
   </p>
 </div>
 
