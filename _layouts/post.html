@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ page.title }} | {{ site.title }}</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}" />
+  {% seo %}
+</head>
+<body>
+
+  <!-- NAVIGATION — same as default layout -->
+  <nav>
+    <a class="logo" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="{{ '/' | relative_url }}">About</a>
+        <a href="{{ '/projects' | relative_url }}">Projects</a>
+        <a href="{{ '/publications' | relative_url }}">Publications</a>
+        <a href="{{ '/blog' | relative_url }}" class="active">Blog</a>
+        <a href="{{ '/cv' | relative_url }}">CV</a>
+      </div>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark/light mode">
+        <span class="icon-moon">🌙</span>
+        <span class="icon-sun">☀️</span>
+      </button>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <!-- Back link to blog listing -->
+    <a class="back-btn" href="{{ '/blog' | relative_url }}">&#8592; Back to blog</a>
+
+    <!--
+      POST HEADER
+      Jekyll fills in page.title, page.date, and page.category
+      automatically from the post's front matter.
+      You don't need to touch this.
+    -->
+    <div class="post-full-title">{{ page.title }}</div>
+    <div class="post-full-meta">
+      <span class="post-date">{{ page.date | date: "%b %Y" }}</span>
+      {% if page.category %}
+        <span class="post-cat">{{ page.category }}</span>
+      {% endif %}
+    </div>
+
+    <!-- POST BODY — your markdown content goes here automatically -->
+    <div class="post-content">
+      {{ content }}
+    </div>
+
+  </main>
+
+  <footer>
+    {{ site.title }} &middot;
+    <a href="mailto:{{ site.email }}">{{ site.email }}</a> &middot;
+    <a href="{{ site.linkedin_url }}" target="_blank">LinkedIn</a>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    }
+    const saved = localStorage.getItem('theme');
+    if (saved) document.documentElement.setAttribute('data-theme', saved);
+  </script>
+
+</body>
+</html>

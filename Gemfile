@@ -1,0 +1,27 @@
+source "https://rubygems.org"
+
+# ================================================================
+# Gemfile — Jekyll dependencies
+#
+# You don't need to edit this file.
+# It tells Ruby which packages to install.
+#
+# To install: run `bundle install` once in your project folder
+# To preview: run `bundle exec jekyll serve`
+# ================================================================
+
+gem "jekyll", "~> 4.3"
+
+group :jekyll_plugins do
+  gem "jekyll-feed"
+  gem "jekyll-seo-tag"
+end
+
+# Windows/JRuby compatibility
+platforms :mingw, :x64_mingw, :mswin, :jruby do
+  gem "tzinfo", ">= 1", "< 3"
+  gem "tzinfo-data"
+end
+
+gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
+gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]

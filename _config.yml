@@ -1,0 +1,67 @@
+# ================================================================
+# _config.yml — SITE SETTINGS
+# This is the main configuration file for your Jekyll site.
+# Jekyll reads this file every time it builds your site.
+#
+# WHAT TO UPDATE HERE:
+#   - title, description, email, social links
+#   - These values are used automatically across the whole site
+#
+# After editing this file locally, restart Jekyll to see changes:
+#   Ctrl+C to stop, then: bundle exec jekyll serve
+# ================================================================
+
+
+# ------------------------------------------------------------------
+# SITE IDENTITY
+# These appear in the browser tab, search results, and metadata.
+# ------------------------------------------------------------------
+title: Chen Wang
+description: >
+  Statistical and computational scientist at the interface of
+  human genetics, real-world evidence, and clinical trial analytics.
+
+
+# ------------------------------------------------------------------
+# YOUR CONTACT & SOCIAL LINKS
+# Used in the nav, footer, and About page automatically.
+# Replace YOUR_SCHOLAR_ID with your Google Scholar profile ID.
+# ------------------------------------------------------------------
+email: cpw5443@gmail.com
+scholar_url: https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID
+github_url: https://github.com/wangc29
+linkedin_url: https://linkedin.com/in/chen-wang-770744141
+
+
+# ------------------------------------------------------------------
+# GITHUB PAGES SETTINGS
+# url: your GitHub Pages URL (replace wangc29 with your username)
+# baseurl: leave empty "" for a root repo (username.github.io)
+# ------------------------------------------------------------------
+url: https://wangc29.github.io
+baseurl: ""
+
+
+# ------------------------------------------------------------------
+# BLOG SETTINGS
+# permalink defines the URL structure for blog posts.
+# /blog/:year/:title means posts live at /blog/2026/post-title/
+# ------------------------------------------------------------------
+permalink: /blog/:year/:title/
+
+
+# ------------------------------------------------------------------
+# JEKYLL BUILD SETTINGS
+# You generally don't need to touch these.
+# ------------------------------------------------------------------
+markdown: kramdown
+theme: null
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - node_modules

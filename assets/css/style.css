@@ -1,0 +1,578 @@
+/* ================================================================
+   CHEN WANG — STYLESHEET
+   File: assets/css/style.css
+
+   TABLE OF CONTENTS
+     1.  Reset & base
+     2.  Colors & fonts  ← CHANGE ACCENT COLOR HERE
+     3.  Layout
+     4.  Navigation
+     5.  Buttons & links
+     6.  Pills / tags
+     7.  About page
+     8.  Experience items
+     9.  Contact & visitor map
+     10. Projects page
+     11. Publications page
+     12. Blog list
+     13. Blog post
+     14. CV page
+     15. Footer
+================================================================ */
+
+
+/* ----------------------------------------------------------------
+   1. RESET & BASE
+---------------------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+
+/* ----------------------------------------------------------------
+   2. COLORS & FONTS
+   Light and dark mode colors are defined here as CSS variables.
+
+   To change the accent color: update --teal in BOTH :root and
+   [data-theme="dark"] below.
+   e.g. #3b5bdb = blue, #e64c4c = red, #7c3aed = purple
+---------------------------------------------------------------- */
+
+/* LIGHT MODE (default) */
+:root, [data-theme="light"] {
+  --teal:    #0e9f7e;
+  --text:    #111111;
+  --muted:   #555555;
+  --light:   #aaaaaa;
+  --border:  #eeeeee;
+  --bg:      #ffffff;
+  --bg-sec:  #f7f7f5;
+  --bg-tag:  #f0faf6;
+  --code-bg: #f5f5f5;
+}
+
+/* DARK MODE — applied when <html data-theme="dark"> */
+[data-theme="dark"] {
+  --teal:    #2dd4a8;
+  --text:    #f0f0f0;
+  --muted:   #aaaaaa;
+  --light:   #555555;
+  --border:  #2a2a2a;
+  --bg:      #141414;
+  --bg-sec:  #1e1e1e;
+  --bg-tag:  #1a2e28;
+  --code-bg: #1e1e1e;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.6;
+  /* Smooth transition when switching themes */
+  transition: background 0.2s, color 0.2s;
+}
+
+
+/* ----------------------------------------------------------------
+   3. LAYOUT
+   max-width controls how wide the content area is.
+---------------------------------------------------------------- */
+.container {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+
+/* ----------------------------------------------------------------
+   4. NAVIGATION
+---------------------------------------------------------------- */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  z-index: 100;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.logo {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: -0.5px;
+  color: var(--text);
+  text-decoration: none;
+}
+
+/* Wrapper that holds nav links + theme toggle together on the right */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-links { display: flex; gap: 2rem; }
+
+.nav-links a {
+  font-size: 13px;
+  color: var(--light);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active { color: var(--text); }
+
+/* ----------------------------------------------------------------
+   THEME TOGGLE BUTTON
+   Moon icon shown in light mode, sun icon shown in dark mode.
+   Icons swap automatically via CSS — no JS needed for the swap.
+---------------------------------------------------------------- */
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 5px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: border-color 0.2s;
+  font-family: inherit;
+  white-space: nowrap;
+}
+.theme-toggle:hover { border-color: var(--teal); }
+
+/* Show moon in light mode, hide sun */
+.theme-toggle .icon-sun  { display: none; }
+.theme-toggle .icon-moon { display: inline; }
+
+/* Show sun in dark mode, hide moon */
+[data-theme="dark"] .theme-toggle .icon-sun  { display: inline; }
+[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+
+
+/* ----------------------------------------------------------------
+   5. BUTTONS & LINKS
+---------------------------------------------------------------- */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: var(--text);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.2s;
+  border: none;
+  cursor: pointer;
+}
+.btn:hover { background: var(--teal); }
+
+.btn-ghost {
+  display: inline-block;
+  padding: 7px 14px;
+  background: transparent;
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 6px;
+  text-decoration: none;
+  border: 1px solid var(--border);
+  transition: border-color 0.2s;
+}
+.btn-ghost:hover { border-color: var(--text); }
+
+.links { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+
+/* ----------------------------------------------------------------
+   6. PILLS / TAGS
+---------------------------------------------------------------- */
+.tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 1rem;
+}
+
+.pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 1.25rem; }
+
+.pill {
+  font-size: 12px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  background: var(--bg-sec);
+  color: var(--muted);
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s;
+}
+.pill:hover { background: var(--border); }
+.pill.active-filter { background: var(--teal); color: #fff; }
+
+.post-cat {
+  display: inline-block;
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: var(--bg-tag);
+  color: var(--teal);
+  font-weight: 500;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+
+/* ----------------------------------------------------------------
+   7. ABOUT PAGE
+---------------------------------------------------------------- */
+h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 1.5rem;
+}
+
+.bio { color: var(--muted); max-width: 560px; }
+
+.about-grid {
+  display: flex;
+  gap: 2.5rem;
+  align-items: flex-start;
+  margin-bottom: 2.5rem;
+}
+
+/* Profile photo — replace div with <img> when you have a photo */
+.about-photo {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: var(--bg-tag);
+  border: 3px solid var(--border);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Syne', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--teal);
+  object-fit: cover;
+}
+
+.about-name {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin-bottom: 0.3rem;
+}
+
+.about-role {
+  font-size: 13px;
+  color: var(--teal);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.about-bio p { margin-bottom: 1rem; color: var(--muted); line-height: 1.85; font-size: 15px; }
+.about-bio a { color: var(--teal); text-decoration: none; }
+.about-bio a:hover { text-decoration: underline; }
+
+.section-divider { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
+
+.exp-section-title {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text);
+  margin-bottom: 1.25rem;
+}
+
+
+/* ----------------------------------------------------------------
+   8. EXPERIENCE ITEMS
+---------------------------------------------------------------- */
+.items { display: flex; flex-direction: column; gap: 1.75rem; }
+
+.item { border-top: 1px solid var(--border); padding-top: 1.5rem; }
+
+.item-meta { font-size: 12px; color: var(--teal); font-weight: 500; margin-bottom: 0.25rem; }
+
+.item h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.3rem;
+}
+
+.item p { font-size: 13px; color: #777; line-height: 1.65; }
+
+
+/* ----------------------------------------------------------------
+   9. CONTACT & VISITOR MAP
+---------------------------------------------------------------- */
+.contact-email {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 14px;
+  color: var(--text);
+  text-decoration: none;
+}
+.contact-email:hover { color: var(--teal); }
+
+.map-section { margin-top: 1rem; }
+.map-label { font-size: 12px; color: #bbb; margin-bottom: 0.75rem; }
+.map-wrapper { width: 100%; border-radius: 10px; overflow: hidden; border: 1px solid var(--border); }
+.map-placeholder {
+  background: var(--bg-sec);
+  padding: 3rem 2rem;
+  text-align: center;
+  font-size: 13px;
+  color: var(--light);
+  line-height: 1.8;
+}
+.map-placeholder a { color: var(--teal); text-decoration: none; }
+
+
+/* ----------------------------------------------------------------
+   10. PROJECTS PAGE
+---------------------------------------------------------------- */
+.project { border-top: 1px solid var(--border); padding-top: 2rem; margin-top: 2rem; }
+.project:first-of-type { border-top: none; padding-top: 0; margin-top: 0; }
+
+.project-image {
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  background: var(--bg-sec);
+  border-radius: 10px;
+  border: 1px dashed var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+.project-image img { width: 100%; height: 100%; object-fit: cover; border-radius: 10px; }
+.placeholder-text { font-size: 12px; color: #bbb; text-align: center; line-height: 1.6; }
+
+.project-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1.4;
+  margin-bottom: 0.4rem;
+}
+
+.project-collab { font-size: 13px; color: var(--muted); margin-bottom: 0.5rem; }
+
+.project-presentations { list-style: none; margin-bottom: 0.75rem; }
+.project-presentations li { font-size: 13px; color: #555; margin-bottom: 0.2rem; }
+.project-presentations li::before { content: "* "; color: #bbb; }
+
+.project-links { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.5rem; }
+
+/* Square bordered resource buttons */
+.project-link {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text);
+  text-decoration: none;
+  border: 1.5px solid #ccc;
+  border-radius: 4px;
+  padding: 3px 12px;
+  transition: border-color 0.2s, color 0.2s;
+}
+.project-link:hover { border-color: var(--teal); color: var(--teal); }
+
+
+/* ----------------------------------------------------------------
+   11. PUBLICATIONS PAGE
+---------------------------------------------------------------- */
+.pub { border-top: 1px solid var(--border); padding-top: 1.25rem; margin-top: 1.25rem; }
+.pub:first-of-type { border-top: none; padding-top: 0; margin-top: 0; }
+
+.pub-title { font-size: 14px; font-weight: 500; color: var(--text); line-height: 1.5; margin-bottom: 0.3rem; }
+.pub-authors { font-size: 12px; color: #777; margin-bottom: 0.2rem; }
+.pub-authors strong { color: var(--text); }
+.pub-venue { font-size: 12px; color: var(--teal); margin-bottom: 0.3rem; }
+.pub-link { font-size: 12px; color: var(--teal); text-decoration: none; }
+.pub-link:hover { text-decoration: underline; }
+
+
+/* ----------------------------------------------------------------
+   12. BLOG LIST
+---------------------------------------------------------------- */
+.filter-pills { margin-bottom: 0.5rem; }
+#posts-container { margin-top: 1.5rem; }
+
+.blog-post {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  border-top: 1px solid var(--border);
+  padding-top: 1.5rem;
+  margin-top: 1.5rem;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.15s;
+}
+.blog-post:hover { transform: translateX(4px); }
+.blog-post:hover .post-title { color: var(--teal); }
+
+.post-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.35rem;
+  transition: color 0.2s;
+}
+
+.post-desc { font-size: 13px; color: #777; line-height: 1.6; margin-bottom: 0.5rem; }
+.post-meta { font-size: 11px; color: var(--light); }
+.post-date { margin-right: 0.5rem; }
+.arrow { font-size: 20px; color: #ccc; flex-shrink: 0; }
+
+
+/* ----------------------------------------------------------------
+   13. BLOG POST
+---------------------------------------------------------------- */
+.back-btn {
+  display: inline-block;
+  font-size: 13px;
+  color: var(--light);
+  text-decoration: none;
+  margin-bottom: 2.5rem;
+  transition: color 0.2s;
+}
+.back-btn:hover { color: var(--text); }
+
+.post-full-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1.15;
+  margin-bottom: 0.75rem;
+}
+
+.post-full-meta {
+  font-size: 12px;
+  color: var(--light);
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Jekyll renders markdown into these standard tags */
+.post-content p { color: #444; line-height: 1.9; margin-bottom: 1.2rem; }
+
+.post-content h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 2rem 0 0.75rem;
+}
+
+.post-content code {
+  background: var(--code-bg);
+  padding: 2px 7px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-family: monospace;
+  color: var(--text);
+}
+
+.post-content pre {
+  background: var(--code-bg);
+  padding: 1.25rem;
+  border-radius: 8px;
+  margin: 1rem 0 1.5rem;
+  overflow-x: auto;
+  font-size: 13px;
+  line-height: 1.7;
+  font-family: monospace;
+  border: 1px solid var(--border);
+}
+
+.post-content pre code {
+  background: none;
+  padding: 0;
+}
+
+.post-content ul,
+.post-content ol { padding-left: 1.5rem; margin-bottom: 1.2rem; }
+
+.post-content li { color: #444; font-size: 15px; line-height: 1.8; margin-bottom: 0.3rem; }
+
+.post-content strong { color: var(--text); }
+
+
+/* ----------------------------------------------------------------
+   14. CV PAGE
+---------------------------------------------------------------- */
+.cv-card {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 3rem 2rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.cv-icon { font-size: 36px; margin-bottom: 1rem; }
+
+.cv-card h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+.cv-card p { font-size: 13px; color: var(--light); margin-bottom: 1.5rem; }
+.cv-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+.cv-hint { font-size: 12px; color: #bbb; margin-top: 1.5rem; text-align: center; }
+.cv-hint code {
+  background: var(--code-bg);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-family: monospace;
+}
+
+
+/* ----------------------------------------------------------------
+   15. FOOTER
+---------------------------------------------------------------- */
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 12px;
+  color: #ccc;
+  border-top: 1px solid var(--border);
+  margin-top: 2rem;
+}
+footer a { color: #ccc; text-decoration: none; }
+footer a:hover { color: var(--teal); }

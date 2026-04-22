@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!--
+    PAGE TITLE
+    Jekyll automatically sets this from each page's "title:" front matter.
+    Format: "Page Title | Chen Wang"
+    You don't need to touch this.
+  -->
+  <title>
+    {% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}
+  </title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- Main stylesheet — all styles live in assets/css/style.css -->
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}" />
+
+  {% seo %}
+</head>
+<body>
+
+  <!--
+    ================================================================
+    NAVIGATION
+    This nav appears on EVERY page automatically.
+    To add or rename a tab: edit this file only — one change,
+    all pages update instantly.
+
+    HOW TO ADD A NEW TAB:
+      Copy one <a> line and update the href and label.
+      The "active" class highlights the current page — Jekyll
+      sets page.url automatically so you don't need to touch that.
+    ================================================================
+  -->
+  <nav>
+    <a class="logo" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="{{ '/' | relative_url }}"
+           class="{% if page.url == '/' %}active{% endif %}">About</a>
+
+        <a href="{{ '/projects' | relative_url }}"
+           class="{% if page.url contains 'projects' %}active{% endif %}">Projects</a>
+
+        <a href="{{ '/publications' | relative_url }}"
+           class="{% if page.url contains 'publications' %}active{% endif %}">Publications</a>
+
+        <a href="{{ '/blog' | relative_url }}"
+           class="{% if page.url contains 'blog' %}active{% endif %}">Blog</a>
+
+        <a href="{{ '/cv' | relative_url }}"
+           class="{% if page.url contains 'cv' %}active{% endif %}">CV</a>
+      </div>
+
+      <!--
+        THEME TOGGLE BUTTON
+        Shows 🌙 in light mode, ☀️ in dark mode.
+        Preference is saved automatically — no need to touch this.
+      -->
+      <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark/light mode">
+        <span class="icon-moon">🌙</span>
+        <span class="icon-sun">☀️</span>
+      </button>
+    </div>
+
+  </nav>
+
+  <!--
+    PAGE CONTENT
+    Jekyll inserts each page's content here.
+    You never need to touch this line.
+  -->
+  <main class="container">
+    {{ content }}
+  </main>
+
+  <!--
+    ================================================================
+    FOOTER
+    This footer appears on EVERY page automatically.
+    To update your email or LinkedIn: edit this file only.
+    ================================================================
+  -->
+  <footer>
+    {{ site.title }} &middot;
+    <a href="mailto:{{ site.email }}">{{ site.email }}</a> &middot;
+    <a href="{{ site.linkedin_url }}" target="_blank">LinkedIn</a>
+  </footer>
+
+  <!--
+    THEME TOGGLE SCRIPT
+    Saves the user's preference in localStorage so it persists
+    across page visits. You don't need to touch this.
+  -->
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    }
+    // Apply saved theme immediately on page load
+    const saved = localStorage.getItem('theme');
+    if (saved) document.documentElement.setAttribute('data-theme', saved);
+  </script>
+
+</body>
+</html>
