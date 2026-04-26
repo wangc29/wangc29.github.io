@@ -45,11 +45,22 @@ title: ""
 -->
 <div class="about-bio">
   <p>
-    Hi! I'm Chen Wang. I'm currently a statistical scientist at the <a href="https://www.regeneron.com/science/genetics-center">Regeneron Genetics Center</a>. In 2023-2025, I was a Clinical Data Scientist at <a href="https://www.gilead.com/">Gilead Sciences</a>  
+    Hi! I'm Chen Wang. I'm currently a statistical scientist at the <a href="https://www.regeneron.com/science/genetics-center">Regeneron Genetics Center (RGC)</a>.    In 2023-2025, I was a Clinical Data Scientist at <a href="https://www.gilead.com/">Gilead Sciences</a>.
+
+    At Regeneron, I worked on two things: First, I leverge advanced computational and statistical methods to identify and validate casual genes for neurodegenerative and neuropsychiatric diseases from RGC's world class deep phenotyped genomic database; Second, I devlop and apply statiscal and AI methods to understand disease natural history and genetic epidemiology to support clinical programs in the neuroscience space, delivering data-driven stratigies for trial feasibility assessment, eligibility criteria optimization and biomarker enrichment.
+
+    At Gilead, I spearheaded the development of EnrollXpert. An end-to-end statistical and AI framework for clinical trial enrollmnent modeling and optimization. EnrollXpert has supported operational strategies for 40+ clinical programs in three major therapeutic areas (Virology, Oncology, and Inflammation Diseases) of Gilead Sciences.
   </p>
   <p>
-    I received my Ph.D. in <a href="https://www.huck.psu.edu/graduate-programs/bioinformatics-and-genomics">Bioinformatics</a> (Statistical Genomics Track) from the <a href="https://psu.edu">The Pennsylvania State University</a>,advised by <a href="https://dajiangliu.blog/">Dr. Dajiang J. Liu</a>. During my Ph.D, I worked with Dr. Liu to develop statistical methods for replicability assessment of multi-ancestry GWAS meta-analysis and disease progression prediction by combing EHR-based biobanks and large GWAS studies.
+    I received my Ph.D. in <a href="https://www.huck.psu.edu/graduate-programs/bioinformatics-and-genomics">Bioinformatics</a> (Statistical Genomics Track) from the <a href="https://psu.edu">The Pennsylvania State University</a>, advised by <a href="https://dajiangliu.blog/">Dr. Dajiang J. Liu</a>. During my Ph.D, I worked with Dr. Liu to develop statistical methods for replicability assessment of multi-ancestry GWAS meta-analysis and disease progression prediction by combing EHR-based biobanks and large GWAS studies.
   </p>
+
+  <p style="margin-top: 1.5rem;"><strong>Research Interests</strong></p>
+  <ul style="margin-top: 0.5rem; padding-left: 1.5rem;">
+    <li>AI and Advanced Analytics for clinical development acceleration</li>
+    <li>Statistical methods in translational human genetics</li>
+    <li>Real-world evidence and causal inference</li>
+  </ul>
 </div>
 
 <hr class="section-divider">
