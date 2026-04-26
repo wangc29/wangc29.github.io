@@ -23,7 +23,7 @@ title: ""
 
   <div>
     <div class="about-name">Chen Wang</div>
-    <div class="about-role">Statistical scientist | Human Genetics | Clinical and Drug development </div>
+    <div class="about-role">Statistical Scientist | Human Genetics | Drug Development </div>
     <div class="links" style="margin-top: 0.75rem;">
       <!-- Links pull from _config.yml automatically -->
       <a class="btn-ghost" href="{{ site.scholar_url }}" target="_blank">Google Scholar</a>
@@ -69,8 +69,34 @@ title: ""
   TO REMOVE A ROLE: delete the entire .item block.
   ================================================================
 -->
-<!div class="exp-section-title">Experience</div>
-<!div class="items">
+<!--
+<div class="exp-section-title">Experience</div>
+<div class="items">
+
+  <div class="item">
+    <div class="item-meta">Regeneron Genetics Center · 2025 – Present</div>
+    <h3>Associate Manager, Statistical Genetics</h3>
+    <p>Trial emulation, causal inference, GWAS for neuropsychiatric disorders.</p>
+  </div>
+
+  <div class="item">
+    <div class="item-meta">Gilead Sciences · 2023 – 2025</div>
+    <h3>Senior Manager, Clinical Data Science</h3>
+    <p>Bayesian enrollment modeling across 40+ programs; RWE and miRNA normalization methods.</p>
+  </div>
+
+  <div class="item">
+    <div class="item-meta">Penn State College of Medicine · 2020 – 2023</div>
+    <h3>Graduate Research Assistant</h3>
+    <p>Developed RATES and GPS — R packages for GWAS replicability and EHR-based disease progression prediction.</p>
+  </div>
+
+
+
+</div>
+
+<hr class="section-divider">
+-->
 
   <!-- TEMPLATE: copy this block to add a new role
   <div class="item">
@@ -79,11 +105,6 @@ title: ""
     <p>Short description of your work and impact.</p>
   </div>
   -->
-
-</div>
-
-<hr class="section-divider">
-
 <!--
   ================================================================
   CONTACT
