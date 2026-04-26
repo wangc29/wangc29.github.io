@@ -104,22 +104,6 @@ title: Projects
   </div>
 </div>
 
-<!-- PROJECT 5 -->
-<div class="project">
-  <div class="project-image">
-    <div class="placeholder-text">Graphical summary<br>coming soon</div>
-  </div>
-  <div class="project-title">MSIpred: Microsatellite Instability Classification from Tumor Mutation Data</div>
-  <div class="project-collab"><strong>Chen Wang</strong>, Chuang Liang, 2017–2018</div>
-  <ul class="project-presentations">
-    <li>Published in Scientific Reports, 2018</li>
-  </ul>
-  <div class="project-links">
-    <a class="project-link" href="https://doi.org/10.1038/s41598-018-35682-z" target="_blank">Paper</a>
-    <a class="project-link" href="YOUR_MSIPRED_GITHUB_URL" target="_blank">Package</a>
-  </div>
-</div>
-
 <!-- TEMPLATE: copy this to add a new project
 <div class="project">
   <div class="project-image">
