@@ -23,7 +23,7 @@ title: ""
 
   <div>
     <div class="about-name">Chen Wang</div>
-    <div class="about-role">Statistical Scientist | Human Genetics | Drug Development </div>
+    <div class="about-role">Statistical Scientist | Human Genetics & Real-World Data | Drug Development </div>
     <div class="links" style="margin-top: 0.75rem;">
       <!-- Links pull from _config.yml automatically -->
       <a class="btn-ghost" href="{{ site.scholar_url }}" target="_blank">Google Scholar</a>
@@ -45,18 +45,10 @@ title: ""
 -->
 <div class="about-bio">
   <p>
-    Hi! I'm Chen.
+    Hi! I'm Chen Wang. I'm currently a statistical scientist at the <a href="https://www.regeneron.com/science/genetics-center">Regeneron Genetics Center</a>. In 2023-2025, I was a Clinical Data Scientist at <a href="https://www.gilead.com/">Gilead Sciences</a>  
   </p>
   <p>
-    I received my Ph.D. in Statistical Genetics from
-    <a href="https://psu.edu">The Pennsylvania State University</a>,
-    advised by
-    <!-- Replace YOUR_ADVISOR_URL with Dr. Liu's actual profile page -->
-    <a href="YOUR_ADVISOR_URL">Dr. Dajiang J. Liu</a>.
-  </p>
-  <p>
-    My research sits at the interface of human genetics, real-world evidence, and clinical
-    trial analytics.
+    I received my Ph.D. in <a href="https://www.huck.psu.edu/graduate-programs/bioinformatics-and-genomics">Bioinformatics</a> (Statistical Genomics Track) from the <a href="https://psu.edu">The Pennsylvania State University</a>,advised by <a href="https://dajiangliu.blog/">Dr. Dajiang J. Liu</a>. During my Ph.D, I worked with Dr. Liu to develop statistical methods for replicability assessment of multi-ancestry GWAS meta-analysis and disease progression prediction by combing EHR-based biobanks and large GWAS studies.
   </p>
 </div>
 
@@ -98,13 +90,6 @@ title: ""
 <hr class="section-divider">
 -->
 
-  <!-- TEMPLATE: copy this block to add a new role
-  <div class="item">
-    <div class="item-meta">Company Name · Year – Year</div>
-    <h3>Your Job Title</h3>
-    <p>Short description of your work and impact.</p>
-  </div>
-  -->
 <!--
   ================================================================
   CONTACT
